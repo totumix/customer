@@ -1,4 +1,5 @@
 export interface IClientServiceInterface {
     saveCustomer(data: any): any;
-    getCustomersAlphabetically(): any
+    getCustomersAlphabetically(): any;
+    getCustomersByAge(): any;
 }

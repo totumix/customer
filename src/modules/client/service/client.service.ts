@@ -5,7 +5,7 @@ import customers from '../../../datajson/customer.json';
 
 export class ClientService implements IClientServiceInterface {
 
-    
+
     async saveCustomer(data) {
         const customer = {
             ...data,
@@ -21,6 +21,16 @@ export class ClientService implements IClientServiceInterface {
 
     async getCustomersAlphabetically() {
         return [...customers].sort((a, b) => a.fullName.localeCompare(b.fullName));
+    }
+
+    async getCustomersByAge() {
+        const now = moment();
+        return [...customers]
+            .map(customer => ({
+                name: customer.fullName,
+                age: now.diff(moment(customer.dateOfBirth), 'years')
+            }))
+            .sort((a, b) => a.age - b.age);
     }
 }
 

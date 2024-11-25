@@ -18,3 +18,9 @@ ClientController.get('/customers/alphabetically', async (req, res) => {
     res.json(customers);
 });
 
+ClientController.get('/customers/by-age', async (req, res) => {
+    let clientDomain: IClientDomainInterface = new ClientDomain();
+    const customers = await clientDomain.getCustomersByAge();
+    res.json(customers);
+});
+
