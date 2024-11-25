@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "fullName": "John Doe",
+    "documentId": "123456789",
+    "email": "john.doe@example.com",
+    "dateOfBirth": "1990-05-15",
+    "timeZone": "America/New_York",
+    "createdAt": "2024-11-24T14:30:00Z"
+  },
+  {
+    "id": 2,
+    "fullName": "Jane Smith",
+    "documentId": "987654321",
+    "email": "jane.smith@example.com",
+    "dateOfBirth": "1985-10-20",
+    "timeZone": "Europe/London",
+    "createdAt": "2024-11-24T14:31:00Z"
+  },
+  {
+    "id": 3,
+    "fullName": "Carlos García",
+    "documentId": "555666777",
+    "email": "carlos.garcia@example.com",
+    "dateOfBirth": "1992-02-28",
+    "timeZone": "America/Bogota",
+    "createdAt": "2024-11-24T14:32:00Z"
+  },
+  {
+    "id": 4,
+    "fullName": "Ana López",
+    "documentId": "444333222",
+    "email": "ana.lopez@example.com",
+    "dateOfBirth": "1995-07-12",
+    "timeZone": "Europe/Madrid",
+    "createdAt": "2024-11-24T14:33:00Z"
+  },
+  {
+    "fullName": "Juan  López",
+    "documentId": "4443332222",
+    "email": "juan.lopez@example.com",
+    "dateOfBirth": "1999-07-12",
+    "id": 5,
+    "createdAt": "2024-11-25T01:56:20.508Z"
+  }
+]

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "commonjs",
+      "outDir": "./dist",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true  // Habilitar la resolución de módulos JSON
+    },
+    "include": ["src/**/*.ts","index.ts", "src/**/*.json"],
+    "exclude": ["node_modules"]
+  }
+
+  
