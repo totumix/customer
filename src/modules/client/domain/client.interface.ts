@@ -5,4 +5,5 @@ export interface IClientDomainInterface {
     getCustomersByAge(): Promise<any>;
     getCustomerStats(): Promise<any>;
     createJwtCustomerToken(customer): Promise<any>;
+    calculateAge(email): Promise<any>;
 }

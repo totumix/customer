@@ -33,5 +33,11 @@ export class ClientDomain implements IClientDomainInterface {
         const token = clientService.createJwtCustomerToken(customer);
         return token;
     }
+
+    async calculateAge(email) : Promise<any> {
+        let clientService: IClientServiceInterface = new ClientService()
+        const age = clientService.calculateAge(email);
+        return age;
+    }
 }
 

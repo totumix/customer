@@ -4,4 +4,5 @@ export interface IClientServiceInterface {
     getCustomersByAge(): any;
     getCustomerStats(): any;
     createJwtCustomerToken(customer): any;
+    calculateAge(email): any;
 }

@@ -49,11 +49,21 @@ export class ClientService implements IClientServiceInterface {
     async createJwtCustomerToken(customer: any) {
         const customerMatch = customers.find(cust => cust.email === customer.email);
         if (!customerMatch) {
-            return { error: 'Cliente no encontrado' };
+            throw new Error('Cliente no encontrado');
         }
         const token = generateJWT(customer);
         return token;
     }
+
+    calculateAge = (email: string): number => {
+        const customer = customers.find(cust => cust.email === email);
+        if (!customer) {
+            throw new Error('Cliente no encontrado');
+        }
+        const now = moment();
+        const age = now.diff(moment(customer.dateOfBirth), 'years');
+        return age;
+    };
 
 }
 
