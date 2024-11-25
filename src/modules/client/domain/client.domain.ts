@@ -27,5 +27,11 @@ export class ClientDomain implements IClientDomainInterface {
         const stats = clientService.getCustomerStats();
         return stats;
     }
+
+    async createJwtCustomerToken(customer) : Promise<any> {
+        let clientService: IClientServiceInterface = new ClientService()
+        const token = clientService.createJwtCustomerToken(customer);
+        return token;
+    }
 }
 

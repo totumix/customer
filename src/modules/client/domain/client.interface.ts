@@ -4,4 +4,5 @@ export interface IClientDomainInterface {
     getCustomersAlphabetically(): Promise<any>;
     getCustomersByAge(): Promise<any>;
     getCustomerStats(): Promise<any>;
+    createJwtCustomerToken(customer): Promise<any>;
 }

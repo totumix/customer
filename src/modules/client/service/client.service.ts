@@ -2,6 +2,7 @@ import moment from "moment";
 import fs from "fs";
 import { IClientServiceInterface } from "./client.interface";
 import customers from '../../../datajson/customer.json';
+import { generateJWT } from "../../../configs/jwt";
 
 export class ClientService implements IClientServiceInterface {
 
@@ -44,6 +45,16 @@ export class ClientService implements IClientServiceInterface {
             averageAge
         };
     }
+
+    async createJwtCustomerToken(customer: any) {
+        const customerMatch = customers.find(cust => cust.email === customer.email);
+        if (!customerMatch) {
+            return { error: 'Cliente no encontrado' };
+        }
+        const token = generateJWT(customer);
+        return token;
+    }
+
 }
 
 

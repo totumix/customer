@@ -30,3 +30,10 @@ ClientController.get('/customers/stats', async (req, res) => {
     res.json(stats);
 });
 
+ClientController.post('/customers/jwt', async (req, res) => {
+    const { fullName, email } = req.body;
+    let clientDomain: IClientDomainInterface = new ClientDomain();
+    const token = await clientDomain.createJwtCustomerToken({ fullName, email });
+    res.json({token});
+});
+

@@ -3,4 +3,5 @@ export interface IClientServiceInterface {
     getCustomersAlphabetically(): any;
     getCustomersByAge(): any;
     getCustomerStats(): any;
+    createJwtCustomerToken(customer): any;
 }
