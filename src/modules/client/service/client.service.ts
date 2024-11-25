@@ -47,7 +47,7 @@ export class ClientService implements IClientServiceInterface {
     }
 
     async createJwtCustomerToken(customer: any) {
-        const customerMatch = customers.find(cust => cust.email === customer.email);
+        const customerMatch = this.getCustomerByEmail(customer.email)
         if (!customerMatch) {
             throw new Error('Cliente no encontrado');
         }
@@ -55,15 +55,22 @@ export class ClientService implements IClientServiceInterface {
         return token;
     }
 
-    calculateAge = (email: string): number => {
-        const customer = customers.find(cust => cust.email === email);
+    calculateAge(email: string): number {
+        const customer = this.getCustomerByEmail(email);
+        if (customer) {
+            const birthDate = moment(customer.dateOfBirth);
+            return moment().diff(birthDate, 'years');
+        }
+        throw new Error('Cliente no encontrado');
+    }
+
+    getCustomerByEmail(email: string) {
+        const customer = customers.find(c => c.email === email);
         if (!customer) {
             throw new Error('Cliente no encontrado');
         }
-        const now = moment();
-        const age = now.diff(moment(customer.dateOfBirth), 'years');
-        return age;
-    };
+        return customer;
+    }
 
 }
 
