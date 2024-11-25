@@ -19,7 +19,9 @@ export class ClientService implements IClientServiceInterface {
         return customer;
     }
 
-    
+    async getCustomersAlphabetically() {
+        return [...customers].sort((a, b) => a.fullName.localeCompare(b.fullName));
+    }
 }
 
 

@@ -10,7 +10,11 @@ export class ClientDomain implements IClientDomainInterface {
         return newCustomer;
     };
     
-  
+    async getCustomersAlphabetically() : Promise<any> {
+        let clientService: IClientServiceInterface = new ClientService()
+        const customers = clientService.getCustomersAlphabetically();
+        return customers;
+    }
 
 }
 

@@ -12,3 +12,9 @@ ClientController.post('/customers', async (req, res) => {
     res.status(201).json(response);
 });
 
+ClientController.get('/customers/alphabetically', async (req, res) => {
+    let clientDomain: IClientDomainInterface = new ClientDomain();
+    const customers = await clientDomain.getCustomersAlphabetically();
+    res.json(customers);
+});
+
