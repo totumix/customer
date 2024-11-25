@@ -42,5 +42,11 @@
     "dateOfBirth": "1999-07-12",
     "id": 5,
     "createdAt": "2024-11-25T01:56:20.508Z"
+  },
+  {
+    "fullName": "Juan  Lóp2ez",
+    "email": "juan.lopezqz@example.com",
+    "id": 6,
+    "createdAt": "2024-11-25T04:03:27.512Z"
   }
 ]
