@@ -32,6 +32,18 @@ export class ClientService implements IClientServiceInterface {
             }))
             .sort((a, b) => a.age - b.age);
     }
+
+    async getCustomerStats() {
+        const now = moment();
+        const totalCustomers = customers.length;
+        const totalAge = customers.reduce((acc, customer) => acc + now.diff(moment(customer.dateOfBirth), 'years'), 0);
+        const averageAge = totalCustomers > 0 ? (totalAge / totalCustomers) : 0;
+
+        return {
+            totalCustomers,
+            averageAge
+        };
+    }
 }
 
 

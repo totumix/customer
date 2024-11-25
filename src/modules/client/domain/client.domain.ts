@@ -21,5 +21,11 @@ export class ClientDomain implements IClientDomainInterface {
         const customers = clientService.getCustomersByAge();
         return customers;
     }
+
+    async getCustomerStats() : Promise<any> {
+        let clientService: IClientServiceInterface = new ClientService()
+        const stats = clientService.getCustomerStats();
+        return stats;
+    }
 }
 

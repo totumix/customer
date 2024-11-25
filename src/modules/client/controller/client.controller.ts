@@ -24,3 +24,9 @@ ClientController.get('/customers/by-age', async (req, res) => {
     res.json(customers);
 });
 
+ClientController.get('/customers/stats', async (req, res) => {
+    let clientDomain: IClientDomainInterface = new ClientDomain();
+    const stats = await clientDomain.getCustomerStats();
+    res.json(stats);
+});
+
